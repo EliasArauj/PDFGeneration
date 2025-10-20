@@ -1,0 +1,184 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false"
+           standardController="Account" renderAs="pdf"
+           contentType="text/html;charset=UTF-8"
+           extensions="PDFGenerationController" language="pt_BR">
+
+<head>
+    <style>
+        @page {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<!-- BORDA EXTERNA DO PDF -->
+<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 100%; background: #0052cc; padding: 0; margin: 0;">
+    <tr>
+        <td style="padding: 3px; background: linear-gradient(to bottom, #0052cc 0%, #0065ff 100%);">
+            
+            <!-- CONTAINER PRINCIPAL BRANCO -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; background: #ffffff; border-radius: 8px;">
+                <tr>
+                    <td style="padding: 30px;">
+
+<!-- CABEÇALHO -->
+<apex:outputPanel >
+    <table cellpadding="0" cellspacing="0" border="0"
+           style="width: 100%; margin: 0 auto 25px; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 2px solid #e3f2fd;">
+        <tr>
+            <!-- Barra lateral colorida -->
+            <td style="width: 8px; background: linear-gradient(to bottom, #0052cc 0%, #0065ff 100%);"></td>
+            
+            <!-- Conteúdo Principal -->
+            <td style="padding: 35px 40px;">
+                <table cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
+                    <tr>
+                        <!-- Informações da Empresa -->
+                        <td style="width: 58%; vertical-align: top;">
+                            <h1 style="color: #172b4d; font-size: 20px; font-weight: 600; margin: 0 0 8px 0; letter-spacing: -0.3px;">
+                                ALVORADA TECNOLOGIA E INOVAÇÃO S.A.
+                            </h1>
+                            <p style="color: #5e6c84; font-size: 12px; line-height: 18px; margin: 0 0 18px 0;">
+                                Av. Nova Horizonte, 987 - 10º andar, Sala 1001<br/>
+                                Jardim Solar, São Paulo - SP • CEP: 04567-890
+                            </p>
+                            <p style="color: #7a869a; font-size: 11px; line-height: 17px; margin: 0; border-left: 3px solid #0052cc; padding-left: 12px;">
+                                Transformação digital é o caminho para impulsionar o crescimento e a eficiência das empresas
+                            </p>
+                        </td>
+                        
+                        <td style="width: 42%; vertical-align: top; padding-left: 30px;">
+                            <div style="background: #f4f5f7; padding: 20px; border-radius: 6px; border: 1px solid #dfe1e6;">
+                                <p style="color: #0052cc; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 12px 0;">
+                                    Informações do Cliente
+                                </p>
+                               <table cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
+    <tr>
+        <td style="padding: 4px 0;">
+            <span style="color: #5e6c84; font-size: 10px; font-weight: 600;">CLIENTE: </span>
+            <span style="color: #172b4d; font-size: 12px; font-weight: 500;">
+                <apex:outputText value="{!conta.Name}"/>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 8px 0 4px 0;">
+            <span style="color: #5e6c84; font-size: 10px; font-weight: 600;">CNPJ: </span>
+            <span style="color: #172b4d; font-size: 12px;">12.345.678/0001-90</span>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 8px 0 4px 0;">
+            <span style="color: #5e6c84; font-size: 10px; font-weight: 600;">CONTATO: </span>
+            <span style="color: #172b4d; font-size: 12px;">
+                <apex:outputText value="{!conta.Phone}"/>
+            </span>
+        </td>
+    </tr>
+</table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</apex:outputPanel>
+
+<!-- CONTATOS RELACIONADOS -->
+<apex:outputPanel rendered="{!NOT(ISNULL(contatosRelacionados)) && (contatosRelacionados.size > 0)}">
+    <div style="width: 100%; margin: 0 auto 25px; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 2px solid #e3f2fd;">
+        
+<!-- Título -->
+<div style="padding: 25px 40px 20px 40px; border-bottom: 2px solid #f4f5f7;">
+    <h2 style="color: #172b4d; font-size: 16px; font-weight: 600; margin: 0; letter-spacing: -0.2px;">
+        Contatos Relacionados à Conta: <span style="color: #5e6c84;"><apex:outputText value="{!conta.Name}"/></span>
+    </h2>
+</div>
+        
+        <!-- Tabela -->
+        <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #fafbfc;">
+                    <th style="padding: 14px 40px; text-align: center; color: #5e6c84; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #dfe1e6;">
+                        Nome
+                    </th>
+                    <th style="padding: 14px 20px; text-align: center; color: #5e6c84; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #dfe1e6;">
+                        Cargo
+                    </th>
+                    <th style="padding: 14px 20px; text-align: center; color: #5e6c84; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #dfe1e6;">
+                        Telefone
+                    </th>
+                    <th style="padding: 14px 40px; text-align: center; color: #5e6c84; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #dfe1e6;">
+                        Level
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <apex:repeat value="{!contatosRelacionados}" var="ct">
+                    <tr style="border-bottom: 1px solid #f4f5f7; text-align: center;">
+                        <td style="padding: 16px 40px; color: #172b4d; font-size: 13px; font-weight: 500; ">
+                            {!ct.Name}
+                        </td>
+                        <td style="padding: 16px 20px; color: #5e6c84; font-size: 12px;">
+                            {!ct.Title}
+                        </td>
+                        <td style="padding: 16px 20px; color: #5e6c84; font-size: 12px;">
+                            {!IF(NOT(ISBLANK(ct.Phone)), ct.Phone, ct.MobilePhone)}
+                        </td>
+                          <td style="padding: 16px 20px; color: #5e6c84; font-size: 12px;">
+                            {!ct.Level__c}
+                        </td>        
+                    </tr>
+                </apex:repeat>
+            </tbody>
+        </table>
+    </div>
+</apex:outputPanel>
+
+<!-- RODAPÉ -->
+<apex:outputPanel >
+    <div style="width: 100%; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 2px solid #e3f2fd;">
+        <table cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
+            <tr>
+                <!-- Informações do Criador -->
+                <td style="width: 55%; padding: 30px 40px; vertical-align: middle; border-right: 1px solid #f4f5f7;">
+                    <p style="color: #5e6c84; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 10px 0;">
+                        Documento Gerado Por
+                    </p>
+                    <p style="color: #172b4d; font-size: 13px; font-weight: 600; margin: 0 0 8px 0;">
+                        <apex:outputText value="{!creatorName}"/>
+                    </p>
+                    <p style="color: #5e6c84; font-size: 11px; line-height: 18px; margin: 0;">
+                        <apex:outputText value="{!creatorEmail}"/><br/>
+                        <apex:outputText value="{!creatorMobilePhone}"/> • <apex:outputText value="{!creatorPhone}"/>
+                    </p>
+                </td>
+                
+                <!-- Receita anual -->
+                <td style="width: 45%; padding: 30px 40px; vertical-align: middle; text-align: center; background: #f4f5f7;">
+                    <p style="color: #5e6c84; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 8px 0;">
+                        Receita anual
+                    </p>
+                    <apex:outputText value="{!annualRevenue}"/><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</apex:outputPanel>
+
+                    </td>
+                </tr>
+            </table>
+            
+        </td>
+    </tr>
+</table>
+
+</apex:page>
