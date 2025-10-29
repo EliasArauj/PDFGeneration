@@ -80,14 +80,6 @@
 <!-- Imagem do seu projeto -->
 <img width="569" height="739" alt="Captura de tela 2025-10-19 231544" src="https://github.com/user-attachments/assets/d740dcac-6b40-4059-9c32-37500ff67e55" />
 
-
-# Salesforce DX Project: Próximos Passos 🚀
-
-Agora que você criou um projeto Salesforce DX, o que vem a seguir? Aqui estão alguns recursos de documentação para você começar.  
-<!-- Esses links ajudam a entender melhor como trabalhar com Salesforce DX e seu fluxo de desenvolvimento -->
-
-## Como Você Planeja Fazer o Deploy das Suas Alterações? ⚡
-
 Você quer apenas **implantar um conjunto de alterações**, ou criar uma **aplicação independente**?  
 Escolha um [modelo de desenvolvimento](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).  
 <!-- Escolher o modelo certo ajuda a organizar o projeto e controlar versões corretamente -->
