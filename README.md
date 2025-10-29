@@ -32,7 +32,7 @@
 - 🖋 Visualforce Pages  
 - 🌐 HTML & CSS (gradientes, sombras e bordas arredondadas)  
 - 📊 StandardController + extensão Apex para lógica personalizada  
-  <!-- Dica: Essa abordagem separa lógica de dados (Apex) do layout (Visualforce) -->
+  <!-- Essa abordagem separa lógica de dados (Apex) do layout (Visualforce) -->
 
 <!-- Estrutura do projeto -->
 ## 📂 Estrutura do Projeto
@@ -41,7 +41,7 @@
 - **PDFGenerationController.cls** → classe Apex que busca os dados da conta, contatos e usuário  
 - **PDFGeneration.page** → página Visualforce que cria o layout do PDF (cabeçalho, tabela e rodapé)  
 - **assets/** → pasta opcional para imagens, logos ou GIFs que você queira usar  
-  <!-- Observação: Subpastas podem ser criadas para organizar imagens ou arquivos extras -->
+  <!-- Subpastas podem ser criadas para organizar imagens ou arquivos extras -->
 
 <!-- Como usar -->
 ## 🚀 Como Usar
@@ -51,7 +51,7 @@
 3. Acesse a página Visualforce com o ID da conta:
 
 4. O PDF será gerado automaticamente, pronto para download ou impressão.  
-<!-- Dica: Pode criar um botão na página da conta para gerar o PDF diretamente -->
+<!-- Pode criar um botão na página da conta para gerar o PDF diretamente -->
 
 <!-- Layout do PDF -->
 ## 📊 Layout do PDF
@@ -62,7 +62,7 @@
 - **Rodapé:** 👤 Dados do usuário que gerou o PDF, 💰 Receita anual  
 
 > Aqui você pode adicionar imagens, logos ou GIFs mostrando o layout real do PDF.  
-<!-- Dica: Adicionar prints do PDF ajuda o leitor a visualizar o resultado -->
+<!-- Adicionar prints do PDF ajuda o leitor a visualizar o resultado -->
 
 <!-- Próximos passos -->
 ## 🎨 Próximos Passos
@@ -84,26 +84,11 @@
 # Salesforce DX Project: Próximos Passos 🚀
 
 Agora que você criou um projeto Salesforce DX, o que vem a seguir? Aqui estão alguns recursos de documentação para você começar.  
-<!-- Dica: Esses links ajudam a entender melhor como trabalhar com Salesforce DX e seu fluxo de desenvolvimento -->
+<!-- Esses links ajudam a entender melhor como trabalhar com Salesforce DX e seu fluxo de desenvolvimento -->
 
 ## Como Você Planeja Fazer o Deploy das Suas Alterações? ⚡
 
 Você quer apenas **implantar um conjunto de alterações**, ou criar uma **aplicação independente**?  
 Escolha um [modelo de desenvolvimento](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).  
-<!-- Observação: Escolher o modelo certo ajuda a organizar o projeto e controlar versões corretamente -->
+<!-- Escolher o modelo certo ajuda a organizar o projeto e controlar versões corretamente -->
 
-## Configure Seu Projeto Salesforce DX 🛠
-
-O arquivo `sfdx-project.json` contém informações importantes de configuração do seu projeto.  
-Veja [Configuração do Projeto Salesforce DX](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) no _Guia do Desenvolvedor Salesforce DX_ para mais detalhes sobre este arquivo.  
-<!-- Dica: Esse arquivo define caminhos de pacotes, namespace, diretórios e outras configurações essenciais do projeto -->
-
-## Leia Tudo Sobre Isso 📚
-
-<!--  Aqui você pode adicionar links extras, tutoriais ou notas importantes para quem for estudar ou usar Salesforce DX -->
-
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
